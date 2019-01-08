@@ -7,8 +7,9 @@ Example:
 package main
 
 import (
-	"PROJECTS/goutilities/Util"
 	"fmt"
+
+	"github.com/huynhphuchuy/goutilities/Util"
 )
 
 func main() {

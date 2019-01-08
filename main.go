@@ -1,5 +1,5 @@
 package goutilities
 
 import (
-	_ "goutilities/Util"
+	_ "github.com/huynhphuchuy/goutilities/Util"
 )

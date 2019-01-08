@@ -1,7 +1,7 @@
 package Util
 
 import (
-	"goutilities/StringUtil"
+	"github.com/huynhphuchuy/goutilities/StringUtil"
 )
 
 type Utility interface {

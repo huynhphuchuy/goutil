@@ -3,6 +3,7 @@ package StringUtil
 import (
 	"errors"
 	"fmt"
+	"math/rand"
 	"reflect"
 	"regexp"
 )
@@ -18,9 +19,9 @@ func (input String) Reverse() (output string) {
 	return output
 }
 
-func (input String) Between(raw string, start string, end string) ([]string, error) {
+func (input String) Between(start string, end string) ([]string, error) {
 	re := regexp.MustCompile(fmt.Sprintf("%s%s%s", regexp.QuoteMeta(start), "(.*)", regexp.QuoteMeta(end)))
-	if matches := re.FindStringSubmatch(raw); len(matches) > 1 {
+	if matches := re.FindStringSubmatch(input.Value); len(matches) > 1 {
 		return matches[1:], nil
 	}
 	return []string{}, errors.New("No substring found!")
@@ -44,4 +45,17 @@ func (input String) Concat(params ...interface{}) (output string, error error) {
 		}
 	}
 	return output, nil
+}
+
+func (input String) IsPalindrome() bool {
+	return input.Reverse() == input.Value
+}
+
+func (input String) Random(length int) string {
+	runes := []rune(input.Value)
+	randString := make([]rune, length)
+	for i := range randString {
+		randString[i] = runes[rand.Intn(len(runes))]
+	}
+	return string(randString)
 }

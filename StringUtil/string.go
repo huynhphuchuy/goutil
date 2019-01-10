@@ -6,11 +6,23 @@ import (
 	"math/rand"
 	"reflect"
 	"regexp"
+	"unicode"
+
+	"golang.org/x/text/transform"
+	"golang.org/x/text/unicode/norm"
 )
 
 type String struct {
 	Value string
 }
+
+// ******** INternal Functions *********
+
+func isMn(r rune) bool {
+	return unicode.Is(unicode.Mn, r) // Mn: nonspacing marks
+}
+
+// *************************************
 
 func (input String) Reverse() (output string) {
 	for _, v := range input.Value {
@@ -58,4 +70,10 @@ func (input String) Random(length int) string {
 		randString[i] = runes[rand.Intn(len(runes))]
 	}
 	return string(randString)
+}
+
+func (input String) RemoveDiacritics() string {
+	output := transform.Chain(norm.NFD, transform.RemoveFunc(isMn), norm.NFC)
+	result, _, _ := transform.String(output, input.Value)
+	return result
 }

@@ -10,6 +10,7 @@ type Utility interface {
 	Concat(...interface{}) (string, error)
 	IsPalindrome() bool
 	Random(int) string
+	RemoveDiacritics() string
 }
 
 func InitString(string string) Utility {

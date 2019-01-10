@@ -35,5 +35,9 @@ func main() {
 
 	// Randomize string
 	fmt.Println(stringUtil.Random(69))
+
+	// Remove String Diacritics
+	diacriticsString := Util.InitString("Xin chào thế giới")
+	fmt.Println(diacriticsString.RemoveDiacritics())
 }
 ```

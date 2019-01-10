@@ -1,7 +1,18 @@
-# goutilities
-Go utilities
+# Go Utilities
 
-Example:
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/huynhphuchuy/goutilities)
+
+### About:
+- Go Utilities contains some useful functions to make development much more simpler while working with Go types
+
+
+### Setup:
+
+```sh
+$ go get github.com/huynhphuchuy/goutilities/Util golang.org/x/text/transform golang.org/x/text/unicode/norm
+```
+
+### Example:
 
 ```go
 package main

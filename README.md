@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/huynhphuchuy/goutilities)
 
 ### About:
-Go Utilities contains some useful functions to make development much more simpler while working with Go types
+Go Utilities contains some useful functions to make development much more simpler while working with Go data types
 
 
 ### Setup:
